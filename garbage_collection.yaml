@@ -1,0 +1,31 @@
+sensors:
+  - name: "Restmülltonne"
+    frequency: "every-n-days"
+    first_date: "2021-01-29"
+    period: 28
+    expire_after: "12:00"
+    move_country_holidays: DE
+    prov: NW
+    holiday_in_week_move: true
+    observed: true
+    verbose_state: false
+  - name: "Papiertonne"
+    frequency: "every-n-days"
+    first_date: "2021-01-22"
+    period: 28
+    expire_after: "12:00"
+    move_country_holidays: DE
+    prov: NW
+    holiday_in_week_move: true
+    observed: true
+    verbose_state: false
+  - name: "Wertstofftonne"
+    frequency: "every-n-days"
+    first_date: "2021-01-22"
+    period: 28
+    expire_after: "12:00"
+    move_country_holidays: DE
+    prov: NW
+    holiday_in_week_move: true
+    observed: true
+    verbose_state: false

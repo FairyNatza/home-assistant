@@ -1,0 +1,10 @@
+alle_personen:
+  name: Alle Personen
+  entities:
+    - person.lars
+
+badezimmer_steckdosen:
+  name: Badezimmer Steckdosen
+  entities:
+    - switch.0000037470039f8ea3e8_1
+    - switch.0000037470039f8ea3e8_2

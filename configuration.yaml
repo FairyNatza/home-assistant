@@ -1,0 +1,31 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+cloud:
+python_script:
+homeassistant:
+  customize: !include customize.yaml
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+frontend: !include frontend.yaml
+tts: !include tts.yaml
+alexa: !include alexa.yaml
+google: !include google.yaml
+google_assistant: !include google_assistant.yaml
+timer: !include timer.yaml
+alarm_control_panel: !include alarm_control_panel.yaml
+input_select: !include input_select.yaml
+light: !include light.yaml
+binary_sensor: !include binary_sensor.yaml
+sensor: !include sensor.yaml
+browser_mod: !include browser_mod.yaml
+homematic: !include homematic.yaml
+logger: !include logger.yaml
+garbage_collection: !include garbage_collection.yaml
+# vacuum:
+#   - platform: xiaomi_miio
+#     host: !secret vacuum_host_lily
+#     token: !secret vacuum_token_lily
+#     name: Lily

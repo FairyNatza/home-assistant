@@ -1,0 +1,3 @@
+# Used to repeat notifications that the alarm needs to be disarmed
+alarm_pending:
+  duration: "00:00:10"

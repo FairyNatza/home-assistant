@@ -1,0 +1,14 @@
+project_id: home-assistant-cf841
+service_account: !include SERVICE_ACCOUNT.JSON
+report_state: true
+exposed_domains:
+  - switch
+  - light
+  - sensor
+  - script
+  - scene
+  - vacuum
+entity_config:
+  input_boolean.alexa_ha_warme_wasser:
+    expose: true
+    name: "Warme Wasser"

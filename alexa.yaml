@@ -1,0 +1,16 @@
+smart_home:
+  locale: de-DE
+  endpoint: https://api.eu.amazonalexa.com/v3/events
+  client_id: !secret alexa_smart_home_client_id
+  client_secret: !secret alexa_smart_home_client_secret
+  filter:
+    include_entities:
+      - binary_sensor.alexa_ha_warme_wasser
+      - input_boolean.alexa_ha_warme_wasser
+    include_domains:
+      - switch
+      - light
+      - sensor
+      - script
+      - scene
+      - vacuum

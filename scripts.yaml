@@ -1,0 +1,54 @@
+ausgewahlten_raum_saugen:
+  alias: Ausgewählten Raum saugen
+  sequence:
+  - service: python_script.vacuum_room
+    data:
+      entity_id: vacuum.lily
+      area: '{{ states.input_select.staubsauger_raum.state }}'
+  mode: single
+  icon: mdi:robot-vacuum
+kuche_saugen:
+  alias: Küche Saugen
+  sequence:
+  - service: python_script.vacuum_room
+    data:
+      entity_id: vacuum.lily
+      area: küche
+  mode: single
+  icon: mdi:robot-vacuum
+wohnzimmer_saugen:
+  alias: Wohnzimmer Saugen
+  sequence:
+  - service: python_script.vacuum_room
+    data:
+      entity_id: vacuum.lily
+      area: wohnzimmer
+  mode: single
+  icon: mdi:robot-vacuum
+eingang_saugen:
+  alias: Eingang Saugen
+  sequence:
+  - service: python_script.vacuum_room
+    data:
+      entity_id: vacuum.lily
+      area: eingang
+  mode: single
+  icon: mdi:robot-vacuum
+schlafzimmer_saugen:
+  alias: Schlafzimmer Saugen
+  sequence:
+  - service: python_script.vacuum_room
+    data:
+      entity_id: vacuum.lily
+      area: schlafzimmer
+  mode: single
+  icon: mdi:robot-vacuum
+badezimmer_saugen:
+  alias: Badezimmer Saugen
+  sequence:
+  - service: python_script.vacuum_room
+    data:
+      entity_id: vacuum.lily
+      area: badezimmer
+  mode: single
+  icon: mdi:robot-vacuum

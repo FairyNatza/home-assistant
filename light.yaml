@@ -1,0 +1,22 @@
+- platform: group
+  name: Wohnzimmer Lichter
+  entities:
+    - light.deckenlampe_wohnzimmer_hinten_3115ee06_level_light_color_on_off
+    - light.deckenlampe_wohnzimmer_vorne_4a45ee06_level_light_color_on_off
+    - light.tv_led
+- platform: group
+  name: Eingangsbereich Lichter
+  entities:
+    - light.signify_netherlands_b_v_lwa001_802b2508_level_on_off
+- platform: group
+  name: Schlafzimmer Lichter
+  entities:
+    - light.wandlampe_schlafzimmer_cd17ee06_level_light_color_on_off
+    - light.philips_iris_pc_left_level_light_color_on_off
+    - light.philips_iris_pc_right_level_light_color_on_off
+# Magic Home (TV LED)
+- platform: flux_led
+  devices:
+    172.22.0.4:
+      name: TV_LED
+      mode: "rgb"

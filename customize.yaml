@@ -1,0 +1,81 @@
+binary_sensor.alexa_ha_fireplace_lamp: {}
+
+#Region "HomeMatic"
+#Region "Steckdose Wohnwand"
+switch.0001dbe9a62328:
+  friendly_name: Steckdose Wohnwand
+  device_class: outlet
+
+sensor.0001dbe9a62328_current:
+  friendly_name: Strom Wohnwand
+  device_class: current
+
+sensor.0001dbe9a62328_energy_counter:
+  friendly_name: Energiezähler Wohnwand
+  device_class: energy
+
+sensor.0001dbe9a62328_frequency:
+  friendly_name: Netzfrequenz Wohnwand
+
+sensor.0001dbe9a62328_power:
+  friendly_name: Leistung Wohnwand
+  device_class: power
+
+sensor.0001dbe9a62328_voltage:
+  friendly_name: Spannung Wohnwand
+  device_class: voltage
+#End Region "Steckdose Wohnwand"
+
+#Region "Steckdose PC"
+switch.0001dbe9a623b3:
+  friendly_name: Steckdose PC
+  device_class: outlet
+
+sensor.0001dbe9a623b3_current:
+  friendly_name: Strom PC
+  device_class: current
+
+sensor.0001dbe9a623b3_energy_counter:
+  friendly_name: Energiezähler PC
+  device_class: energy
+
+sensor.0001dbe9a623b3_frequency:
+  friendly_name: Netzfrequenz PC
+
+sensor.0001dbe9a623b3_power:
+  friendly_name: Leistung PC
+  device_class: power
+
+sensor.0001dbe9a623b3_voltage:
+  friendly_name: Spannung PC
+  device_class: voltage
+#End Region "Steckdose PC"
+
+#Region "Wassersensor Küche"
+binary_sensor.00189be99f3c95_alarmstate:
+  friendly_name: Wasser Alarm Küche
+  device_class: problem
+
+binary_sensor.00189be99f3c95_low_bat:
+  friendly_name: Schwacher Akku Wassersensor Küche
+  device_class: battery
+
+binary_sensor.00189be99f3c95_moisture_detected:
+  friendly_name: Feuchtigkeit erkannt
+  device_class: moisture
+
+binary_sensor.00189be99f3c95_waterlevel_detected:
+  friendly_name: Wasserstand erkannt
+  device_class: moisture
+#End Region "Wassersensor Küche"
+
+#End Region "Einganstür"
+binary_sensor.hmip_swdm_00155d898a8ed3_low_bat:
+  friendly_name: Schwacher Akku Eingangstür
+  device_class: battery
+
+binary_sensor.hmip_swdm_00155d898a8ed3_state:
+  friendly_name: Eingangstür
+  device_class: door
+#End Region "Einganstür"
+#End Region "HomeMatic"

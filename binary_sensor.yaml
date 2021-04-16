@@ -1,0 +1,22 @@
+- platform: tod
+  name: Abendruhe
+  after: "22:00"
+  before: "09:00" #Normal bis 7 aber Sonntags bis 9
+- platform: tod
+  name: Abendruhe Lily
+  after: "21:00"
+  before: "09:00" #Normal bis 7 aber Sonntags bis 9
+- platform: tod
+  name: Mittagsruhe
+  after: "13:00"
+  before: "15:00"
+- platform: tod
+  name: Mittagsruhe Lily
+  after: "12:00"
+  before: "15:00"
+- platform: template
+  sensors:
+    alexa_ha_warme_wasser:
+      friendly_name: "Alexa HA - Warme Wasser"
+      device_class: garage_door
+      value_template: "{{ is_state('input_boolean.alexa_ha_warme_wasser', 'on') }}"

@@ -1,0 +1,5 @@
+# default: warning
+# logs:
+#   pyhomematic: debug
+#   homeassistant.components.homematic: debug
+#   custom_components.garbage_collection: debug

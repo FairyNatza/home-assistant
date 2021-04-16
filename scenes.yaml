@@ -1,0 +1,344 @@
+- id: '1615028519428'
+  name: Abendbeleuchtung
+  entities:
+    light.deckenlampe_wohnzimmer_hinten_3115ee06_level_light_color_on_off:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      brightness: 153
+      color_temp: 360
+      off_brightness:
+      friendly_name: Deckenlampe Wohnzimmer (Hinten)
+      supported_features: 63
+      state: 'on'
+    light.deckenlampe_wohnzimmer_vorne_4a45ee06_level_light_color_on_off:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      brightness: 153
+      color_temp: 360
+      off_brightness:
+      friendly_name: Deckenlampe Wohnzimmer (Vorne)
+      supported_features: 63
+      state: 'on'
+- id: '1615053690670'
+  name: Hell
+  entities:
+    light.deckenlampe_wohnzimmer_vorne_4a45ee06_level_light_color_on_off:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      brightness: 254
+      hs_color:
+      - 30
+      - 28.571
+      rgb_color:
+      - 255
+      - 218
+      - 182
+      xy_color:
+      - 0.397
+      - 0.363
+      off_brightness:
+      friendly_name: Deckenlampe Wohnzimmer (Vorne)
+      supported_features: 63
+      state: 'on'
+    light.deckenlampe_wohnzimmer_hinten_3115ee06_level_light_color_on_off:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      brightness: 254
+      hs_color:
+      - 30
+      - 28.571
+      rgb_color:
+      - 255
+      - 218
+      - 182
+      xy_color:
+      - 0.397
+      - 0.363
+      off_brightness:
+      friendly_name: Deckenlampe Wohnzimmer (Hinten)
+      supported_features: 63
+      state: 'on'
+- id: '1616760091814'
+  name: Romantisch
+  entities:
+    media_player.ytube_music_player:
+      volume_level: 0.76
+      is_volume_muted: false
+      media_content_type: music
+      media_duration: 255.094422
+      media_position: 0.796055
+      media_position_updated_at: '2021-03-26T12:51:09.057558+00:00'
+      media_title: Falling Like The Stars
+      media_artist: James Arthur
+      media_album_name: ''
+      shuffle: true
+      repeat: all
+      entity_picture_local: /api/media_player_proxy/media_player.ytube_music_player?token=33b7a8f710e361065926cdcdb0df8f4c2295b1ff3b53506a2cf2034666968368&cache=834c03f4e3d97262
+      _media_type: playlist
+      _media_id: PLgzTt0k8mXzE6H9DDgiY7Pd8pKZteis48
+      _radio_based: ''
+      _player_state: playing
+      playlists:
+      - Your Likes
+      - Best Love Songs and Romantic Songs - Spotify Playlist 2021
+      - Music
+      - I'm a nightcore slut
+      - Bitchy songs
+      - Uploads
+      - Anime Nostalgie
+      - 'Nightcore: Sad Songs'
+      - Nightcore Top 500
+      - Ultra coole Nightcore Lieder
+      - Depressing,Sad,Dark and Psycho Nightcore Songs
+      - KPOP GROUP GIRLS 2019 MV • Kpop World
+      - Amazing Nightcore | Shiko Playlist 🎵
+      - Crypt of the Necrodancer Full OST
+      - Pop Motivation
+      total_tracks: 100
+      tracks:
+      - James Arthur - Falling Like The Stars
+      - Taylor Swift - willow
+      - The Chainsmokers - All We Know (feat. Phoebe Ryan)
+      - Ne-Yo - Let Me Love You (Until You Learn To Love Yourself)
+      - Rihanna - We Found Love (feat. Calvin Harris)
+      - Lauv - I Like Me Better
+      - James Arthur - Rewrite The Stars
+      - PUBLICVEVO - PUBLIC - Make You Mine (Put Your Hand in Mine) [Official Video]
+      - Shawn Mendes - Señorita
+      - 5 Seconds of Summer - 5 Seconds of Summer - She Looks So Perfect (Official
+        Video)
+      - Joel Adams - Please Don't Go
+      - The Chainsmokers - Paris
+      - Ed Sheeran - Perfect
+      - The Kid Laroi - NEED YOU MOST (So Sick)
+      - Shawn Mendes - There's Nothing Holdin' Me Back
+      - John Legend - All of Me
+      - Bradley Cooper - Shallow
+      - Alex & Sierra - Little Do You Know
+      - Ariana Grande - Love Me Harder
+      - Axwell - Sun Is Shining
+      - Rita Ora - Body on Me (feat. Chris Brown)
+      - Amuse - UNDRESSD - Forever Young (Official Music Video)
+      - Hailee Steinfeld - Rock Bottom (feat. DNCE)
+      - Beyoncé - Halo
+      - Lewis Capaldi - Someone You Loved
+      - Tori Kelly - I Was Made for Loving You (feat. Ed Sheeran)
+      - Bruno Mars - Versace on the Floor
+      - Nathan Sykes - Over And Over Again
+      - Ed Sheeran - Thinking Out Loud
+      - Liam Payne - For You (Fifty Shades Freed)
+      - Bazzi - Beautiful (feat. Camila Cabello)
+      - Sandro Cavazza - Used To
+      - Gavin James - The Book Of Love (Single Version)
+      - Chris Brown - With You
+      - Justin Bieber - Intentions (feat. Quavo)
+      - Gryffin - All You Need To Know (feat. Calle Lehmann)
+      - Ali Gatie - What If I Told You That I Love You
+      - Ed Sheeran - Afterglow
+      - Shawn Mendes - Wonder
+      - John Legend - Tonight (Best You Ever Had) [Clean] (feat. Ludacris)
+      - kenzie - What If
+      - JP Cooper - Too Close
+      - ZAYN - Let Me
+      - ZAYN - Dusk Till Dawn (feat. Sia)
+      - Little Mix - Secret Love Song (feat. Jason Derulo)
+      - R. City - Locked Away (feat. Adam Levine)
+      - Måns Zelmerlöw - Fire In the Rain
+      - Sam Smith - Stay with Me
+      - Christina Perri - A Thousand Years
+      - ZAYN - PILLOWTALK
+      - Taylor Swift - Everything Has Changed (feat. Ed Sheeran)
+      - Jason Derulo - Marry Me
+      - Martin Garrix - In The Name Of Love
+      - One Direction - What Makes You Beautiful
+      - Zoe Wees - Control
+      - Ellie Goulding - Love Me Like You Do
+      - Machine Gun Kelly - Bad Things
+      - Demi Lovato - Give Your Heart a Break
+      - Sigala - Lasting Lover
+      - Jason Derulo - The Other Side
+      - NF - If You Want Love
+      - Axwell Λ Ingrosso - More Than You Know
+      - Betty Who - I Love You Always Forever
+      - P!nk - Just Give Me a Reason (feat. Nate Ruess)
+      - Jai Waetford - Shy
+      - Jason Derulo - If It Ain't Love
+      - ZAYN - A Whole New World (End Title)
+      - David Guetta - Let's Love
+      - Machine Gun Kelly - At My Best (feat. Hailee Steinfeld)
+      - Conor Maynard - Turn Around (feat. Ne-Yo)
+      - Gavin James - Nervous (The Ooh Song) (Mark McCabe remix)
+      - Ed Sheeran - Photograph
+      - the bootleg boy - Kina - Can We Kiss Forever? (ft. Adriana Proenza)
+      - Justin Bieber - Holy (feat. Chance The Rapper)
+      - Mike Perry featuring Shy Martin - The Ocean
+      - Bruno Mars - Just the Way You Are
+      - Hailee Steinfeld - Starving (feat. Zedd)
+      - Timbaland - Apologize (feat. OneRepublic)
+      - Matteo Bocelli - Fall On Me (From Disney's "The Nutcracker And The Four Realms"
+        / English Version)
+      - James Blunt - Heart to Heart
+      - The Chainsmokers - Closer (feat. Halsey)
+      - JP Saxe - If The World Was Ending (feat. Julia Michaels)
+      - James Arthur - Say You Won't Let Go
+      - Ed Sheeran - Shape of You
+      - Ellie Goulding - How Long Will I Love You
+      - ZAYN - I Don't Wanna Live Forever
+      - Hailee Steinfeld - Capital Letters
+      - CNCO - CNCO, Little Mix - Reggaetón Lento (Remix) [Official Video] (feat.
+        Zion & Lennox)
+      - Rudimental - These Days (feat. Dan Caplen, Jess Glynne & Macklemore)
+      - Taylor Swift - Wildest Dreams
+      - James Bay - Peer Pressure (feat. Julia Michaels)
+      - Chris Brown - Next to You (feat. Justin Bieber)
+      - Justin Bieber - Anyone
+      - Michael Bublé - I Believe in You
+      - Jason Derulo - Want to Want Me
+      - Conan Gray - Heather
+      - Justin Bieber - Love Yourself
+      - Ellie Goulding - Beating Heart
+      - Willamette Stone - Heart Like Yours
+      - Simple Plan - Summer Paradise (feat. Taka)
+      current_track: 0
+      videoId: PMGY8fLwess
+      likeStatus: INDIFFERENT
+      lyrics: "I swear to God, when I come home\r\nI'm gonna hold you so close\r\n\
+        I swear to God, when I come home\r\nI'll never let go\r\nLike a river, I flow\r\
+        \nTo the ocean, I know\r\nYou pull me close, guiding me home\r\n\r\nAnd I\
+        \ need you to know that we're fallin' so fast\r\nWe're fallin' like the stars,\
+        \ fallin' in love\r\nAnd I'm not scared to say those words with you, I'm safe\r\
+        \nWe're fallin' like the stars, we're fallin' in love\r\n\r\nI swear to God,\
+        \ I can see\r\nFour kids and no sleep\r\nWe'll have one on each knee, you\
+        \ and me, hmm\r\nAnd when they've grown up\r\nYou're still the girl in the\
+        \ club\r\nWhen I held your hair up, 'cause you had too much\r\n\r\nAnd I need\
+        \ you to know that we're fallin' so fast\r\nWe're fallin' like the stars,\
+        \ fallin' in love\r\nAnd I'm not scared to say those words with you, I'm safe\r\
+        \nWe're fallin' like the stars, we're fallin' in love\r\n\r\nI swear to God,\
+        \ every day\r\nHe won't take you away\r\n'Cause without you, babe, I lose\
+        \ my way\r\n\r\nOh, I'm in love\r\nOh, I'm in love\r\nOh, I'm in love\r\n\
+        Oh, I'm in love\r\nOh, I'm in love\r\nOh, I'm in love (fallin' like the stars)\r\
+        \n\r\nAnd I need you to know that we're fallin' so fast\r\nWe're fallin' like\
+        \ the stars, fallin' in love\r\nAnd I'm not scared to say those words with\
+        \ you, I'm safe\r\nWe're fallin' like the stars, we're fallin' in love"
+      _player_id: media_player.chromecast
+      shuffle_mode: Shuffle
+      friendly_name: ytube_music_player
+      icon: mdi:music-circle
+      entity_picture: https://i.ytimg.com/vi/PMGY8fLwess/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3neuVwtFvWzlTsDWi7lH9VSEs0WWg
+      supported_features: 450495
+      state: playing
+    input_select.ytube_music_player_playlist:
+      options:
+      - Your Likes
+      - Best Love Songs and Romantic Songs - Spotify Playlist 2021
+      - Music
+      - I'm a nightcore slut
+      - Bitchy songs
+      - Uploads
+      - Anime Nostalgie
+      - 'Nightcore: Sad Songs'
+      - Nightcore Top 500
+      - Ultra coole Nightcore Lieder
+      - Depressing,Sad,Dark and Psycho Nightcore Songs
+      - KPOP GROUP GIRLS 2019 MV • Kpop World
+      - Amazing Nightcore | Shiko Playlist 🎵
+      - Crypt of the Necrodancer Full OST
+      - Pop Motivation
+      editable: false
+      friendly_name: Playlist
+      icon: mdi:playlist-music
+      state: Best Love Songs and Romantic Songs - Spotify Playlist 2021
+    input_select.ytube_music_player_source:
+      options:
+      - Playlist Radio
+      - Playlist
+      editable: false
+      friendly_name: Source
+      icon: mdi:music-box-multiple
+      state: Playlist
+    input_select.ytube_music_player_speakers:
+      options:
+      - alle_google_speaker
+      - fire_tv
+      - jabra_evolve_65t
+      - show_schlafzimmer
+      - dot_kuche
+      - lars_s_fire_tv_cube
+      - uberall
+      - this_device
+      - chromecast
+      - google_home_mini
+      editable: false
+      friendly_name: Speakers
+      icon: mdi:speaker
+      state: chromecast
+    input_boolean.ytube_music_player_playcontinuous:
+      editable: true
+      friendly_name: ytube music player playcontinuous
+      icon: mdi:repeat
+      state: 'on'
+    light.wohnzimmer_lichter:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorstrobe
+      - blue_strobe
+      - rb_cross_fade
+      - colorloop
+      - yellow_strobe
+      - cyan_fade
+      - red_fade
+      - random
+      - white_fade
+      - colorjump
+      - cyan_strobe
+      - red_strobe
+      - gb_cross_fade
+      - white_strobe
+      - green_strobe
+      - purple_fade
+      - purple_strobe
+      - yellow_fade
+      - rg_cross_fade
+      - blue_fade
+      - green_fade
+      brightness: 235
+      hs_color:
+      - 4.562
+      - 29.586
+      rgb_color:
+      - 255
+      - 185
+      - 179
+      xy_color:
+      - 0.423
+      - 0.328
+      effect: red_fade
+      entity_id:
+      - light.deckenlampe_wohnzimmer_hinten_3115ee06_level_light_color_on_off
+      - light.deckenlampe_wohnzimmer_vorne_4a45ee06_level_light_color_on_off
+      - light.tv_led
+      friendly_name: Wohnzimmer Lichter
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'on'
+    switch.0001dbe9a62328:
+      today_energy_kwh: 2.4526999999999997
+      id: 0001DBE9A62328
+      interface: ip
+      rssi_device: -62
+      power: 58.2
+      current: 346
+      voltage: 230.6
+      friendly_name: Steckdose Wohnwand
+      device_class: outlet
+      state: 'on'
+  icon: mdi:heart

@@ -1,0 +1,449 @@
+- id: '1614968973607'
+  alias: Staubsaugen wenn keiner Zuhause ist
+  description: 'Es wird alle 30 Minuten oder wenn alle Personen die Zone Home verlassen
+    geprüft, ob gesaugt werden muss.
+
+    Es wird die ganze Wohnung gesaugt, wenn keiner Zuhause ist und der Staubsauger
+    min. 24 stunden am Dock stand und es nicht in der Abendruhe und nicht in der Mittagsruhe
+    ist.'
+  trigger:
+  - platform: time_pattern
+    minutes: /30
+  - platform: state
+    entity_id: group.alle_personen
+    from: home
+    to: not_home
+    for: 00:03:00
+  condition:
+  - condition: state
+    entity_id: group.alle_personen
+    state: not_home
+  - condition: state
+    entity_id: binary_sensor.abendruhe_lily
+    state: 'off'
+  - condition: state
+    entity_id: binary_sensor.mittagsruhe_lily
+    state: 'off'
+  - condition: state
+    entity_id: sensor.lily_cleaned_today
+    state: 'false'
+  action:
+  - service: vacuum.start
+    target:
+      device_id: 480141a0b5c2c71dcb7ebac39b93e9a5
+  - device_id: 253009f3d3e6c7431a94c4a11e3c026c
+    domain: mobile_app
+    type: notify
+    title: Reinigung gestartet!
+    message: Die Reinigung wurde gestartet, da niemand Zuhause ist.
+  mode: single
+- id: '1615026510852'
+  alias: Home Assistant Restart Notification
+  description: ''
+  use_blueprint:
+    path: gregoryduckworth/restart_notification.yaml
+    input:
+      notification_message: Home Assistant wurde neu gestartet!
+      notify_device: 253009f3d3e6c7431a94c4a11e3c026c
+- id: '1615026723710'
+  alias: ZHA - Philips Hue Dimmer Switch (individual buttons)
+  description: ''
+  use_blueprint:
+    path: mannerisms/zha-philips-hue-dimmer-switch-individual-buttons-with-long-presses.yaml
+    input:
+      remote: 726741048d62f2465d18aa966b2bad0f
+      button_1_single_press:
+      - choose: []
+        default:
+        - service: light.turn_on
+          data:
+            transition: 1
+          target:
+            entity_id: light.wohnzimmer_lichter
+      button_4_single_press:
+      - service: light.turn_off
+        data:
+          transition: 1
+        target:
+          entity_id: light.wohnzimmer_lichter
+      button_1_long_press:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.0001dbe9a62328
+      button_2_long_press:
+      - service: light.turn_on
+        data:
+          transition: 1
+          brightness_step_pct: 25
+        target:
+          entity_id: light.wohnzimmer_lichter
+      button_3_long_press:
+      - service: light.turn_on
+        data:
+          transition: 1
+          brightness_step_pct: -25
+        target:
+          entity_id: light.wohnzimmer_lichter
+      button_2_single_press:
+      - service: light.turn_on
+        data:
+          transition: 1
+          brightness_step_pct: 10
+        target:
+          entity_id: light.wohnzimmer_lichter
+      button_3_single_press:
+      - service: light.turn_on
+        data:
+          transition: 1
+          brightness_step_pct: -10
+        target:
+          entity_id: light.wohnzimmer_lichter
+      button_4_long_press:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.0001dbe9a62328
+- id: '1616083795677'
+  alias: Tintenstand aktualisieren Schwarz
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.mfc_j5330dw_black_ink_remaining
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: sensor.mfc_j5330dw_black_ink_remaining
+      state: undefined
+  action:
+  - service: input_number.set_value
+    data:
+      value: '{{float(states(''sensor.mfc_j5330dw_black_ink_remaining''))}}'
+    entity_id: input_number.schwarze_tinte
+  mode: single
+- id: '1616083795678'
+  alias: Tintenstand aktualisieren Cyan
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.mfc_j5330dw_cyan_ink_remaining
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: sensor.mfc_j5330dw_cyan_ink_remaining
+      state: undefined
+  action:
+  - service: input_number.set_value
+    data:
+      value: '{{float(states(''sensor.mfc_j5330dw_cyan_ink_remaining''))}}'
+    entity_id: input_number.cyan_tinte
+  mode: single
+- id: '1616083795679'
+  alias: Tintenstand aktualisieren Magenta
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.mfc_j5330dw_magenta_ink_remaining
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: sensor.mfc_j5330dw_magenta_ink_remaining
+      state: undefined
+  action:
+  - service: input_number.set_value
+    data:
+      value: '{{float(states(''sensor.mfc_j5330dw_magenta_ink_remaining''))}}'
+    entity_id: input_number.magenta_tinte
+  mode: single
+- id: '1616083795680'
+  alias: Tintenstand aktualisieren Gelbe
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.mfc_j5330dw_yellow_ink_remaining
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: sensor.mfc_j5330dw_yellow_ink_remaining
+      state: undefined
+  action:
+  - service: input_number.set_value
+    data:
+      value: '{{float(states(''sensor.mfc_j5330dw_yellow_ink_remaining''))}}'
+    entity_id: input_number.gelbe_tinte
+  mode: single
+- id: '1616149500974'
+  alias: NFC Tag NFCTag1 ist gescannt
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 5da82329-6bbc-4c27-9a6c-ef613a007069
+  condition: []
+  action:
+  - scene: scene.lampen_wohnzimmer
+  mode: single
+- id: '1616503273062'
+  alias: Wohnwand Steckdose aus wenn geräte im Standby sind
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /30
+  condition:
+  - condition: state
+    entity_id: switch.0001dbe9a62328
+    state: 'on'
+  - condition: numeric_state
+    entity_id: sensor.0001dbe9a62328_power
+    below: '16'
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.0001dbe9a62328
+  mode: single
+- id: '1616504877361'
+  alias: Benachrichtugung wenn Tür geöffnet
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.hmip_swdm_00155d898a8ed3_state
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: not
+    conditions:
+    - condition: zone
+      entity_id: person.lars
+      zone: zone.home
+  action:
+  - device_id: 253009f3d3e6c7431a94c4a11e3c026c
+    domain: mobile_app
+    type: notify
+    title: Eingangstür geöffnet
+    message: Die Eingangstür wurde geöffnet
+  mode: single
+- id: '1616519033275'
+  alias: PC Steckdose aus wenn geräte im Standby sind
+  description: 'Strom aus wenn Drucker un PC aus sind (11W-14W)
+
+
+    Drucker an = 14-17W
+
+    Drucker aus ~ 10,67W
+
+    Drucken ~ 25,16
+
+
+    PC gesperrt = 160W-80W
+
+    PC an 220W-140+?'
+  trigger:
+  - platform: time_pattern
+    minutes: /10
+  condition:
+  - condition: state
+    entity_id: switch.0001dbe9a623b3
+    state: 'on'
+  - condition: numeric_state
+    entity_id: sensor.0001dbe9a623b3_power
+    below: '13'
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.0001dbe9a623b3
+  mode: single
+- alias: Alarm auslösen während der Scharfschaltung aus der Ferne
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.hmip_swdm_00155d898a8ed3_state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.hausalarm
+    state: armed_away
+  action:
+    service: alarm_control_panel.alarm_trigger
+    target:
+      entity_id: alarm_control_panel.hausalarm
+  id: 8ad934b402bf48879e70aa1c3d7decff
+- alias: Alarm auslösen während der Scharfschaltung von Zuhause
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.hmip_swdm_00155d898a8ed3_state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.hausalarm
+    state: armed_home
+  action:
+    service: alarm_control_panel.alarm_trigger
+    target:
+      entity_id: alarm_control_panel.hausalarm
+  id: 3eb222d105874251861b8272c75fcf15
+- alias: Benachrichtigung bei Alarmauslösung senden
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.hausalarm
+    to: triggered
+  action:
+  - service: notify.notify
+    data:
+      message: ALARM! Der Alarm wurde ausgelöst {{ states('sensor.date_time') }}
+  - service: notify.alexa_media_uberall
+    data:
+      data:
+        type: announce
+      message: Alarm! Eindringling erkannt! Bitte verlassen Sie umgehend die Wohnung.
+        Der Alarm wurde ausgelöst und weitere Maßnahmen eingeleitet.
+  id: 60b075220ad0423a996f3cc76a25c3bc
+- alias: Benachrichtigung senden, wenn der Alarm entschärft ist
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.hausalarm
+    to: disarmed
+  action:
+  - service: notify.notify
+    data:
+      message: ALARM! Der Alarm wurde entschärft um {{ states('sensor.date_time')}}
+  id: f2f31cb1147a4c87a1ad307d2c700fa4
+- alias: Benachrichtigung senden, wenn der Alarm im Status "Ausstehend" ist
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.hausalarm
+    to: pending
+  action:
+  - service: notify.notify
+    data:
+      message: ALARM! Der Alarm befindet sich im Zustand Ausstehend {{ states('sensor.date_time')}}
+  id: ca57e2166db0483b8765a6a9db328677
+- alias: Benachrichtigung senden, wenn der Alarm im Unterwegs-Modus scharfgeschaltet
+    ist
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.hausalarm
+    to: armed_away
+  action:
+  - service: notify.notify
+    data:
+      message: ALARM! Der Alarm ist im Abwesenheitsmodus scharf {{ states('sensor.date_time')}}
+  id: 7f95a16d421d445bbd10a1de8eccec2b
+- alias: Benachrichtigung senden, wenn der Alarm im Zuhause-Modus scharfgeschaltet
+    ist
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.hausalarm
+    to: armed_home
+  action:
+  - service: notify.notify
+    data:
+      message: ALARM! Der Alarm ist im Zuhause-Modus scharfgeschaltet {{ states('sensor.date_time')}}
+  id: 25ef81fcca47456384b8f3075b80a604
+- alias: Alarm - Ausstehend Warnung
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.hausalarm
+    from: armed_away
+    to: pending
+  action:
+  - delay: 00:00:05
+  - service: notify.alexa_media_uberall
+    data:
+      data:
+        type: announce
+      message: Achtung, der Hausalarm ist Scharf! Bitte deaktivieren Sie den Alarm
+        innerhalb von 30 Sekunden.
+  - service: timer.start
+    entity_id: timer.alarm_pending
+  id: 486bbba9212b4785813c7b4f1a89ae16
+- alias: Alarm - Ausstehend Warnung Wiederholung
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.alarm_pending
+  condition:
+    condition: state
+    entity_id: alarm_control_panel.hausalarm
+    state: pending
+  action:
+  - service: notify.alexa_media_uberall
+    data:
+      data:
+        type: announce
+      message: Bitte deaktivieren Sie sofort den Alarm.
+  - service: timer.start
+    entity_id: timer.alarm_pending
+  id: afa4e87e32c541b596db97fb870cb2ff
+- alias: Alarm - Deaktiviert Warnung stoppen
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.hausalarm
+    to: disarmed
+  action:
+  - service: timer.cancel
+    entity_id: timer.alarm_pending
+  id: 9eba71c453974caa84d4d7347c4434b0
+- alias: Benachrichtigung senden, wenn der feuchtigkeits Alarm ausgelöst wurde
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.00189be99f3c95_moisture_detected
+    to: 'on'
+  action:
+  - service: notify.notify
+    data:
+      message: 'ALARM! Feuchtigkeit in der Küche erkannt {{ states(''sensor.date_time'')
+        }}
+
+        '
+  id: e30e503d5afb4c9c82719e71e35194d7
+- alias: Benachrichtigung senden, wenn der wasserstand Alarm ausgelöst wurde
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.00189be99f3c95_waterlevel_detected
+    to: 'on'
+  action:
+  - service: notify.notify
+    data:
+      message: 'ALARM! Wasserstand in der Küche erkannt {{ states(''sensor.date_time'')
+        }}
+
+        '
+  id: f929986a5a1b48fbbbc163a19b52dff1
+- alias: Benachrichtigung senden, wenn der Wassersensor den Alarm auslöst
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.00189be99f3c95_alarmstate
+    to: 'on'
+  action:
+  - service: notify.notify
+    data:
+      message: 'ALARM! Wassersensor in der Küche im Alarm status {{ states(''sensor.date_time'')
+        }}
+
+        '
+  id: 24366ab90cdf4235b4a98f090d45d60d
+- id: '1616756432381'
+  alias: NFC Tag NFCTag2-Wohnwand-Switch-Toggle ist gescannt
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: fdfa23f8-c856-486f-9bda-53d9d83191d2
+  condition: []
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.0001dbe9a62328
+  mode: single
+- id: '1617809350521'
+  alias: NFC Tag NFCTag3PCStrom ist gescannt
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 763ba2c5-195f-46e8-a07a-ac528ac59eb5
+  condition: []
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.0001dbe9a623b3
+  mode: single
