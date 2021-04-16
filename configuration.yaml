@@ -24,6 +24,9 @@ browser_mod: !include browser_mod.yaml
 homematic: !include homematic.yaml
 logger: !include logger.yaml
 garbage_collection: !include garbage_collection.yaml
+
+readme:
+  convert_lovelace: false
 # vacuum:
 #   - platform: xiaomi_miio
 #     host: !secret vacuum_host_lily
