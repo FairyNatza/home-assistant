@@ -1,3 +1,9 @@
+- platform: google_keep
+  name: Google Notizen Lars
+  username: !secret google_keep.username
+  password: !secret google_keep.password
+  labels:
+    - Home Assistant
 - platform: steam_online
   api_key: !secret sensor_steam_api_key
   accounts: !secret sensor_steam_accounts
@@ -32,6 +38,28 @@
     fritzbox_online:
       friendly_name: "Online"
       value_template: "{% if is_state_attr('sensor.fritz_box_7590', 'is_connected', True) -%}Online{%- else -%}Offline{%- endif %}"
+    fritzbox_max_mbit_rate_up:
+      friendly_name: "Max Upload Speed"
+      value_template: "{{(state_attr('sensor.fritz_box_7590', 'max_byte_rate_up') / 125000) | round(2)}}"
+      unit_of_measurement: "Mbit/s"
+    fritzbox_max_mbit_rate_down:
+      friendly_name: "Max Download Speed"
+      value_template: "{{(state_attr('sensor.fritz_box_7590', 'max_byte_rate_down') / 125000) | round(2)}}"
+      unit_of_measurement: "Mbit/s"
+    fritzbox_actual_mbit_rate_up:
+      friendly_name: "Aktueller Upload Speed"
+      value_template: "{{(state_attr('sensor.fritz_box_7590', 'transmission_rate_up') / 125000) | round(2)}}"
+      unit_of_measurement: "Mbit/s"
+    fritzbox_actual_mbit_rate_down:
+      friendly_name: "Aktueller Download Speed"
+      value_template: "{{(state_attr('sensor.fritz_box_7590', 'transmission_rate_down') / 125000) | round(2)}}"
+      unit_of_measurement: "Mbit/s"
+    fritzbox_uptime:
+      friendly_name: "Online Zeit"
+      value_template: "{{timedelta(seconds = state_attr('sensor.fritz_box_7590', 'uptime'))}}"
+    fritzbox_uptime_date:
+      friendly_name: "Online Seit"
+      value_template: "{{as_timestamp(now() - timedelta(seconds = state_attr('sensor.fritz_box_7590', 'uptime'))) | timestamp_custom('%d.%m.%Y %H:%M ')}}"
     ink_black:
       friendly_name: "Schwarze Tinte"
       unit_of_measurement: "%"

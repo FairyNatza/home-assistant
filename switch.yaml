@@ -1,0 +1,4 @@
+- platform: wake_on_lan
+  mac: !secret wake_on_lan_mac_pc
+  host: !secret wake_on_lan_host_pc
+  name: "PC WOL"

@@ -8,3 +8,20 @@ badezimmer_steckdosen:
   entities:
     - switch.0000037470039f8ea3e8_1
     - switch.0000037470039f8ea3e8_2
+
+wohnzimmer_steckdosen:
+  name: Wohnzimmer Steckdosen
+  entities:
+    - switch.gosund_2er_steckdose_oben
+    - switch.gosund_2er_steckdose_unten
+    - switch.0001dbe9a62328
+
+schlafzimmer_steckdosen:
+  name: Schlafzimmer Steckdosen
+  entities:
+    - switch.0001dbe9a623b3
+
+kueche_steckdosen:
+  name: Küche Steckdosen
+  entities:
+    - input_boolean.alexa_ha_warme_wasser

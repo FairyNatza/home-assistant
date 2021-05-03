@@ -26,7 +26,7 @@
     state: 'off'
   - condition: state
     entity_id: sensor.lily_cleaned_today
-    state: 'false'
+    state: 'False'
   action:
   - service: vacuum.start
     target:

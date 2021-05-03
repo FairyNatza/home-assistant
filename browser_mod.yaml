@@ -3,3 +3,5 @@ devices:
     name: edge
     disable:
       - light
+disable:
+  - all

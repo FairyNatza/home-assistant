@@ -2,6 +2,7 @@
 default_config:
 cloud:
 python_script:
+wake_on_lan:
 homeassistant:
   customize: !include customize.yaml
 
@@ -24,6 +25,7 @@ browser_mod: !include browser_mod.yaml
 homematic: !include homematic.yaml
 logger: !include logger.yaml
 garbage_collection: !include garbage_collection.yaml
+switch: !include switch.yaml
 
 readme:
   convert_lovelace: false

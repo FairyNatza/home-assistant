@@ -6,30 +6,34 @@ This is my Home Assistant installation.
 
 Description | value
 -- | --
-Number of entities | 295
-Number of sensors | 142
+Number of entities | 335
+Number of sensors | 161
 
 
 
 ## The custom_components that I use
 
+### [Google Home](https://github.com/leikoilja/ha-google-home)
+
+### [YouTube Music Player](https://github.com/KoljaWindeler/ytube_music_player)
+
+### [Browser mod](https://github.com/thomasloven/hass-browser_mod/blob/master/README.md)
+
+### [Alexa Media Player](https://github.com/custom-components/alexa_media_player/wiki)
+
+### [Garbage Collection](https://github.com/bruxy70/Garbage-Collection/)
+
 ### [HACS](https://hacs.xyz/docs/configuration/start)
+
+### [Scheduler integration](https://github.com/nielsfaber/scheduler-component)
 
 ### [Generate readme](https://github.com/custom-components/readme)
 
 _Generates this awesome readme file._
 
-### [YouTube Music Player](https://github.com/KoljaWindeler/ytube_music_player)
-
 ### [Shopping List](https://www.home-assistant.io/integrations/shopping_list)
 
-### [Alexa Media Player](https://github.com/custom-components/alexa_media_player/wiki)
-
-### [Browser mod](https://github.com/thomasloven/hass-browser_mod/blob/master/README.md)
-
-### [Garbage Collection](https://github.com/bruxy70/Garbage-Collection/)
-
-### [Scheduler integration](https://github.com/nielsfaber/scheduler-component)
+### [Google Keep](https://github.com/PiotrMachowski/Home-Assistant-custom-components-Google-Keep)
 
 
 ***

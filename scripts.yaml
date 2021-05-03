@@ -52,3 +52,27 @@ badezimmer_saugen:
       area: badezimmer
   mode: single
   icon: mdi:robot-vacuum
+'1618910265587':
+  alias: 'Hausarbeit: Toilette Reinigen Erledigt'
+  sequence:
+  - service: input_datetime.set_datetime
+    data:
+      date: '{{(now() + timedelta(weeks = 4)).date().isoformat()}}
+
+        '
+    target:
+      entity_id: input_datetime.toilette_reinigen
+  mode: single
+  icon: mdi:broom
+hausarbeit_bettwasche_reinigen_erledigt:
+  alias: 'Hausarbeit: Bettwäsche Reinigen Erledigt'
+  sequence:
+  - service: input_datetime.set_datetime
+    data:
+      date: '{{(now() + timedelta(weeks = 4)).date().isoformat()}}
+
+        '
+    target:
+      entity_id: input_datetime.bettwasche_reinigen
+  mode: single
+  icon: mdi:broom
