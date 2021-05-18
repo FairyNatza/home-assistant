@@ -21,7 +21,7 @@ input_select: !include input_select.yaml
 light: !include light.yaml
 binary_sensor: !include binary_sensor.yaml
 sensor: !include sensor.yaml
-browser_mod: !include browser_mod.yaml
+# browser_mod: !include browser_mod.yaml
 homematic: !include homematic.yaml
 logger: !include logger.yaml
 garbage_collection: !include garbage_collection.yaml
